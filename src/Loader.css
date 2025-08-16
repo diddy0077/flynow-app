@@ -1,0 +1,79 @@
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(70px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(70px) rotate(-360deg);
+  }
+}
+.animate-orbit {
+  animation: orbit 4s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #818cf8, 0 0 20px #6366f1, 0 0 40px #4f46e5;
+  }
+  50% {
+    box-shadow: 0 0 20px #a5b4fc, 0 0 40px #818cf8, 0 0 60px #6366f1;
+  }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes trailGlow {
+  0% {
+    box-shadow: inset 0 0 20px rgba(129, 140, 248, 0.2),
+                0 -5px 15px rgba(99, 102, 241, 0.6),
+                0 -10px 30px rgba(79, 70, 229, 0.4);
+    transform: rotate(0deg);
+  }
+  100% {
+    box-shadow: inset 0 0 20px rgba(129, 140, 248, 0.2),
+                0 -5px 15px rgba(99, 102, 241, 0.6),
+                0 -10px 30px rgba(79, 70, 229, 0.4);
+    transform: rotate(360deg);
+  }
+}
+.animate-trail-glow {
+  animation: trailGlow 4s linear infinite;
+}
+
+/* Airplane Takeoff */
+@keyframes takeoff {
+  0% {
+    transform: rotate(0deg) translateX(70px) rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(45deg) translateX(90px) rotate(-20deg);
+  }
+  100% {
+    transform: rotate(45deg) translateX(500px) translateY(-300px) rotate(-20deg);
+    opacity: 0;
+  }
+}
+.animate-takeoff {
+  animation: takeoff 1.5s ease-in forwards;
+}
+
+/* Glow Burst Animation */
+@keyframes burst {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #818cf8, 0 0 40px #6366f1, 0 0 60px #4f46e5;
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 40px #a5b4fc, 0 0 80px #818cf8, 0 0 120px #6366f1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    box-shadow: 0 0 10px transparent;
+  }
+}
+.animate-burst {
+  animation: burst 0.6s ease-out forwards;
+}

@@ -1,0 +1,354 @@
+@import "tailwindcss";
+@theme {
+  --font-primary:  "Poppins", "sans-serif";
+  --font-secondary: "Inter", "sans-serif"; /* ... */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+}
+
+
+
+
+body {
+   height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* better on mobile */
+}
+
+#root {
+  height: 100%;
+}
+
+* {
+  backface-visibility: hidden;
+  /* transform: translateZ(0);  */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Create the custom animation utility */
+@layer utilities {
+  .animate-scroll-x {
+    animation: scroll 20s linear infinite;
+  }
+}
+body {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Hide arrows in Chrome, Safari, Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide arrows in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+
+
+.item {
+  width: 150px;
+  border: 1px solid var(--main-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  position: absolute;
+  left: calc(200px * 7);
+  animation-name: scrollleft;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+}
+
+.recognition ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 4rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@keyframes scrollleft {
+  to {
+    left: -800px;
+  }
+}
+
+.item:nth-child(1) {
+  animation-delay: calc(20s / 7 * (7 - 1) * -1);
+}
+
+.item:nth-child(2) {
+  animation-delay: calc(20s / 7 * (7 - 2) * -1);
+}
+.item:nth-child(3) {
+  animation-delay: calc(20s / 7 * (7 - 3) * -1);
+}
+.item:nth-child(4) {
+  animation-delay: calc(20s / 7 * (7 - 4) * -1);
+}
+.item:nth-child(5) {
+  animation-delay: calc(20s / 7 * (7 - 5) * -1);
+}
+.item:nth-child(6) {
+  animation-delay: calc(20s / 7 * (7 - 6) * -1);
+}
+.item:nth-child(7) {
+  animation-delay: calc(20s / 7 * (7 - 7) * -1);
+}
+
+
+
+
+.form {
+ box-shadow: 5px 5px 10px black;
+}
+
+.other-issues-image:hover {
+  transform: scale(0.95) rotate(5deg);
+}
+
+.other-issues-image {
+  border-radius: 10px 10px 0 0;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.marquee-container {
+  font-family: "Poppins", "sans-serif";
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #f0f4f8; /* optional */
+  padding: 0.3rem 0;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 40s linear infinite;
+}
+
+nav {
+  z-index: 100;
+}
+
+
+form {
+  z-index: 1;
+  position: relative;
+}
+
+.custom-shape-divider-bottom-1755034164 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1755034164 svg {
+    position: relative;
+    display: block;
+    width: calc(108% + 1.3px);
+    height: 354px;
+}
+
+.custom-shape-divider-bottom-1755034164 .shape-fill {
+    fill: #312E81;
+}
+
+
+
+.nav-link::before {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #fbbf24; /* Amber-400 */
+  transition: width .3s ease-in-out;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+
+
+.marquee-content span {
+  display: inline-block;
+  margin-right: 4rem;
+  font-size: .7rem;
+  color: #1e3a8a; /* Indigo-800 */
+  font-weight: 400;
+}
+
+.modal {
+  background-image: linear-gradient(to bottom right, rgba(10, 25, 47, 0.7), rgba(0, 0, 0, 0.8));
+  z-index: 1000000;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.active span:nth-of-type(1) {
+  transform: translateY(5px) rotate(45deg)
+}
+
+.active span:nth-of-type(3) {
+  transform: translateY(-11px) rotate(-45deg)
+}
+
+.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+@media (max-width:675px) {
+  
+.marquee-container {
+ background-color: #1e3a8a; /* optional */
+}
+
+.carousel {
+  overflow: scroll;
+}
+
+.marquee-content span {
+  color: #f0f4f8; /* Indigo-800 */
+}
+
+
+.lang {
+  display: none;
+}
+
+}
+
+
+
+@media (min-width:600px) {
+  .hamburger {
+  display: none;
+}
+
+
+}
+
+.custom-shape-divider-top-1754918563 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1754918563 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 500px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1754918563 .shape-fill {
+    fill: #1e3a8a;
+}

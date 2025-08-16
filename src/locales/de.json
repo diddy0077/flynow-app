@@ -1,0 +1,14 @@
+{
+  "from": "Von",
+  "enterCity": "Stadt eingeben",
+  "to": "Nach",
+  "departure": "Abflug",
+  "return": "Rückkehr",
+  "passengers": "Passagiere",
+  "tripType": "Reiseart",
+  "searchFlights": "Flüge suchen",
+  "cantDecide": "Sie wissen nicht, wohin Sie gehen sollen?",
+  "exploreDestinations": "Alle Ziele erkunden",
+  "searchEverywhere": "Flüge überall suchen",
+  "errorNoIATA": "Flughafencodes konnten nicht gefunden werden."
+}

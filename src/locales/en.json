@@ -1,0 +1,14 @@
+{
+  "from": "From",
+  "enterCity": "Enter city",
+  "to": "To",
+  "departure": "Departure",
+  "return": "Return",
+  "passengers": "Passengers",
+  "tripType": "Trip Type",
+  "searchFlights": "Search Flights",
+  "cantDecide": "Can't decide where to go?",
+  "exploreDestinations": "Explore every destination",
+  "searchEverywhere": "Search flights Everywhere",
+  "errorNoIATA": "Could not find airport codes."
+}

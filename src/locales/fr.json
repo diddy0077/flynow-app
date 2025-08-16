@@ -1,0 +1,14 @@
+{
+  "from": "De",
+  "enterCity": "Entrez la ville",
+  "to": "À",
+  "departure": "Départ",
+  "return": "Retour",
+  "passengers": "Passagers",
+  "tripType": "Type de voyage",
+  "searchFlights": "Rechercher des vols",
+  "cantDecide": "Vous ne savez pas où aller ?",
+  "exploreDestinations": "Explorez toutes les destinations",
+  "searchEverywhere": "Rechercher des vols partout",
+  "errorNoIATA": "Impossible de trouver les codes des aéroports."
+}
