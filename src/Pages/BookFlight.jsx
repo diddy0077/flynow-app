@@ -7,6 +7,16 @@ import { PaystackButton } from 'react-paystack';
 import emailjs from '@emailjs/browser';
 
 function BookFlight() {
+
+
+  function parseDuration(isoDuration) {
+  const match = isoDuration.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+  if (!match) return isoDuration;
+  const hours = match[1] || 0;
+  const minutes = match[2] || 0;
+  return `${hours}h ${minutes}m`;
+  }
+  
   const location = useLocation();
   const flight = location.state?.flight;
 
@@ -112,7 +122,7 @@ function BookFlight() {
           <p><strong>From:</strong> {flight.departure.iataCode} ({flight.departure.terminal || 'N/A'})</p>
           <p><strong>To:</strong> {flight.arrival.iataCode} ({flight.arrival.terminal || 'N/A'})</p>
           <p><strong>Departure:</strong> {new Date(flight.departure.at).toLocaleString()}</p>
-          <p><strong>Duration:</strong> {flight.duration}</p>
+          <p><strong>Duration:</strong> {parseDuration(flight.duration)}</p>
           <p><strong>Stops:</strong> {flight.stops}</p>
           <p><strong>Price:</strong> {flight.price} {flight.currency} (~₦{Math.round(flight.price * EUR_TO_NGN).toLocaleString()})</p>
         </div>

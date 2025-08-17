@@ -22,6 +22,17 @@ airlinesArray.forEach(a => {
   airlineMap[a.iataCode] = a.commonName || a.businessName || "Unknown Airline";
 });
 
+// Load airport data
+const airportsPath = path.resolve('./airports.json');
+const airportsRaw = fs.readFileSync(airportsPath, 'utf-8');
+const airportsArray = JSON.parse(airportsRaw);
+
+// Build a map: { "LOS": { city: "Lagos", name: "Murtala Muhammed Intl" }, ... }
+const airportMap = {};
+airportsArray.forEach(a => {
+  airportMap[a.iataCode] = { city: a.city, name: a.name };
+});
+
 // Amadeus setup
 const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_CLIENT_ID,
@@ -46,27 +57,60 @@ app.get("/search-flights", async (req, res) => {
   try {
     const response = await amadeus.shopping.flightOffersSearch.get(params);
 
-    // Map response to simplified object for React
     const simplified = (response.data || []).map(flight => {
       const itinerary = flight.itineraries[0]; // outbound
       const outboundSegment = itinerary.segments[0];
+      const arrivalSegment = itinerary.segments[itinerary.segments.length - 1];
 
-      // Flight number
       const flightNumber = outboundSegment.number || "Unknown";
-
-      // Airline name from map
       const airlineName = airlineMap[outboundSegment.carrierCode] || outboundSegment.carrierCode;
+
+      // Enrich departure and arrival with city & name
+      const departureInfo = {
+        ...outboundSegment.departure,
+        city: airportMap[outboundSegment.departure.iataCode]?.city || null,
+        name: airportMap[outboundSegment.departure.iataCode]?.name || null,
+      };
+
+      const arrivalInfo = {
+        ...arrivalSegment.arrival,
+        city: airportMap[arrivalSegment.arrival.iataCode]?.city || null,
+        name: airportMap[arrivalSegment.arrival.iataCode]?.name || null,
+      };
+
+      // Enrich return itinerary if exists
+      let returnItinerary = null;
+      if (flight.itineraries[1]) {
+        const retItin = flight.itineraries[1];
+        returnItinerary = {
+          ...retItin,
+          segments: retItin.segments.map(seg => ({
+            ...seg,
+            departure: {
+              ...seg.departure,
+              city: airportMap[seg.departure.iataCode]?.city || null,
+              name: airportMap[seg.departure.iataCode]?.name || null,
+            },
+            arrival: {
+              ...seg.arrival,
+              city: airportMap[seg.arrival.iataCode]?.city || null,
+              name: airportMap[seg.arrival.iataCode]?.name || null,
+            },
+          })),
+        };
+      }
 
       return {
         airline: airlineName,
         flightNumber,
         stops: itinerary.segments.length - 1,
-        departure: itinerary.segments[0].departure,
-        arrival: itinerary.segments[itinerary.segments.length - 1].arrival,
+        departure: departureInfo,
+        arrival: arrivalInfo,
         duration: itinerary.duration,
         price: flight.price.total,
         currency: flight.price.currency,
-        returnItinerary: flight.itineraries[1] || null,
+        seatsLeft: flight.numberOfBookableSeats,
+        returnItinerary,
       };
     });
 

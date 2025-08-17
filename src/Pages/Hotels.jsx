@@ -273,7 +273,7 @@ export default function Hotels() {
 
           <button
             onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages)) 
             }
             disabled={currentPage === totalPages}
             className="cursor-pointer px-4 py-2 bg-gray-200 rounded disabled:opacity-50"

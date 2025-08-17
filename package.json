@@ -1,9 +1,9 @@
 {
+  "homepage": "https://diddy0077.github.io/flynow-app",
   "name": "flynow-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://diddy0077.github.io/flynow-app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
