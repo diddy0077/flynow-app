@@ -1,52 +1,118 @@
-# React + Vite
+<p align="center">
+  <img src="./public/flynow-logo-blue.png" alt="Flynow Logo" width="200"/>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✈️ Flynow – Flight Search App
 
-Currently, two official plugins are available:
+Flynow is a modern flight search application that helps users find flights quickly and easily.
+It’s built with React (frontend) and powered by a Node.js/Express backend server that connects to a flight search API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## Expanding the ESLint configuration
+🔎 Flight Search – Search for flights by origin, destination, and date.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🖥 Responsive UI – Built with React + Tailwind CSS for a modern look and feel.
 
-<----COLOR PALETTE---->
-✅ Main Colors for Your Flight Search Project
-Role	Color Name	Tailwind Class
-Primary Brand Color	Indigo (strong, professional)	indigo-600
-Accent Color	Sky Blue (modern, friendly)	sky-500
-Background	Light Gray (clean layout)	gray-50
-Surface / Cards	White (classic card background)	white
-Main Text	Slate Dark (readable, clean)	slate-800
-Secondary Text	Slate Medium (subtext, labels)	slate-600
-Success Highlights	Emerald (for payment success, booking confirmed)	emerald-500
-Error / Alerts	Rose (for errors or warnings)	rose-500
+🌍 Live Deployment – Hosted on GitHub Pages (frontend) and backend API server.
 
-🎯 Where to Use Each
-indigo-600 — Header, buttons, icons, price highlights, CTA sections
+⚡ Fast & Lightweight – Optimized with React hooks, components, and API fetching.
 
-sky-500 — Secondary buttons, badge highlights, hover accents
+🛠 Backend Server – Securely fetches real-time flight data from a third-party API.
 
-gray-50 — Body background across all pages
+🏗 Tech Stack
 
-white — Search form, result cards, modals
+Frontend:
 
-slate-800 — Main text (flight names, labels, prices)
+React (Vite)
 
-slate-600 — Descriptions, subtitles, date/time
+Tailwind CSS
 
-emerald-500 — Payment success message, status badges
+React Router
 
-rose-500 — Validation errors, unavailable flight alerts
+GitHub Pages for deployment
 
-<---Main color Selection-->
+Backend:
 
-| Section              | Background         | Text               | Buttons/Highlights    |
-| -------------------- | ------------------ | ------------------ | --------------------- |
-| Navbar               | `bg-indigo-600`    | `text-white`       | `hover:bg-indigo-700` |
-| Hero / Header        | `bg-gray-100`      | `text-slate-800`   | `bg-indigo-600`       |
-| Search Results       | `bg-white` (cards) | `text-slate-800`   | `bg-amber-400`        |
-| Booking Form         | `bg-gray-100`      | `text-slate-800`   | `bg-indigo-600`       |
-| Payment Success Page | `bg-white`         | `text-emerald-500` | -                     |
-| Footer               | `bg-indigo-600`    | `text-white`       | -                     |
+Node.js
+
+Express.js
+
+API Integration with Flight Data Provider
+
+📂 Project Structure
+flynow-app/
+├── frontend/        # React app (Vite setup)
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── backend/         # Node.js + Express server
+│   ├── server.js
+│   └── package.json
+└── README.md
+
+⚙️ Installation & Setup
+Clone the repository
+git clone https://github.com/your-username/flynow-app.git
+cd flynow-app
+
+Frontend Setup
+cd frontend
+npm install
+npm run dev    # Start frontend locally
+
+Backend Setup
+cd backend
+npm install
+node server.js   # Start backend server
+
+🌐 Deployment
+
+Frontend: Hosted on GitHub Pages → https://your-username.github.io/flynow-app/
+
+Backend: Hosted on (Render/Heroku/Vercel/Your server) → https://flynow-backend.onrender.com
+
+📜 Manifest & PWA Support
+
+Custom manifest.json for branding
+
+Favicon + app icons for web and mobile
+
+Configured for installable PWA
+
+🧑‍💻 Author
+
+Built with ❤️ by Daniel Udeh
+Frontend Developer | Passionate about React & Real-world Apps
+[Portfolio](https://diddy0077.github.io/daniel-udeh/index.html)
+
+[LinkedIn](https://www.linkedin.com/in/daniel-udeh-a03971350/)
+
+## 📸 Screenshots
+
+### Homepage
+<img src="./public/flynow-homepage.png" alt="Flynow Homepage" width="800"/>
+
+### Search Results
+<img src="./public/search-results.png" alt="Flynow Search Results" width="800"/>
+
+
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-3-38BDF8?logo=tailwind-css)
+![Node.js](https://img.shields.io/badge/Node.js-18-green?logo=node.js)
+![Express](https://img.shields.io/badge/Express.js-4-black?logo=express)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!  
+Feel free to check the [issues page](https://github.com/diddy0077/flynow-app/issues).
+
+## 🛣 Roadmap
+- [ ] Add user authentication
+- [ ] Save favorite flights
+- [ ] Support multi-city flights
+- [ ] Dark mode UI
+
+
+📜 License
+
+This project is licensed under the MIT License.
