@@ -52,7 +52,7 @@ flynow-app/
 
 ⚙️ Installation & Setup
 Clone the repository
-git clone https://github.com/your-username/flynow-app.git
+git clone https://github.com/diddy0077/flynow-app.git
 cd flynow-app
 
 Frontend Setup
@@ -67,9 +67,9 @@ node server.js   # Start backend server
 
 🌐 Deployment
 
-Frontend: Hosted on GitHub Pages → https://your-username.github.io/flynow-app/
+Frontend: Hosted on GitHub Pages → https://diddy0077.github.io/flynow-app/
 
-Backend: Hosted on (Render/Heroku/Vercel/Your server) → https://flynow-backend.onrender.com
+Backend: Hosted on (Render/Heroku/Vercel/Your server) → https://flynow-app-server.onrender.com
 
 📜 Manifest & PWA Support
 
